@@ -68,8 +68,9 @@
   });
 
   revealItems.push(
-    { element: document.querySelector(".contact"), delay: 700 },
-    { element: document.querySelector(".footer"), delay: 850 }
+    { element: document.querySelector(".carousel-track-wrapper"), delay: 700 },
+    { element: document.querySelector(".contact"), delay: 850 },
+    { element: document.querySelector(".footer"), delay: 950 }
   );
 
   revealItems.forEach(function (item) {
@@ -81,4 +82,35 @@
       item.element.classList.add("is-visible");
     }, item.delay);
   });
+
+  var carouselWrapper = document.querySelector(".carousel-track-wrapper");
+  var carouselTrack = document.querySelector(".carousel-track");
+
+  if (carouselWrapper && carouselTrack) {
+    var startX = 0;
+    var cardWidth = 172;
+
+    carouselWrapper.addEventListener("touchstart", function (event) {
+      startX = event.changedTouches[0].clientX;
+      carouselTrack.style.animationPlayState = "paused";
+    }, { passive: true });
+
+    carouselWrapper.addEventListener("touchend", function (event) {
+      var endX = event.changedTouches[0].clientX;
+      var diff = startX - endX;
+
+      if (Math.abs(diff) > 30) {
+        carouselTrack.style.animation = "none";
+        carouselTrack.style.transform = "translateX(" + (diff > 0 ? "-" : "") + cardWidth + "px)";
+
+        window.setTimeout(function () {
+          carouselTrack.style.transform = "";
+          carouselTrack.style.animation = "";
+          carouselTrack.style.animationPlayState = "running";
+        }, 350);
+      }
+
+      carouselTrack.style.animationPlayState = "running";
+    }, { passive: true });
+  }
 })();
