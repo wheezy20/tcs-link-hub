@@ -116,39 +116,15 @@ Store all link data in /data/links.js like this:
 
 ```js
 const links = [
-  {
-    label: "Inquiry Form",
-    url: "https://admissions.tcsch.edu.gh/inquiry",
-    icon: "📋",
-    active: true
-  },
-  {
-    label: "Admissions Portal",
-    url: "https://admissions.tcsch.edu.gh/apply",
-    icon: "🎓",
-    active: true
-  },
-  {
-    label: "Career & Job Openings",
-    url: "#",
-    icon: "💼",
-    active: false,
-    comingSoon: true
-  },
-  {
-    label: "School Gallery",
-    url: "#",
-    icon: "🖼️",
-    active: false,
-    comingSoon: true
-  },
-  {
-    label: "Visit Us",
-    url: "https://maps.app.goo.gl/HtHD46jHLVhT5mDAA",
-    icon: "📍",
-    active: true
-  }
+  { label: "Inquiry Form",        icon: "file-text",      url: "https://admissions.tcsch.edu.gh/inquiry",           active: true  },
+  { label: "Admissions Portal",   icon: "graduation-cap", url: "https://admissions.tcsch.edu.gh/apply",             active: true  },
+  { label: "Career & Job Openings", icon: "briefcase",    url: "#",                                                 active: false, comingSoon: true },
+  { label: "School Gallery",      icon: "image",          url: "#",                                                 active: false, comingSoon: true },
+  { label: "Visit Us",            icon: "map-pin",        url: "https://maps.app.goo.gl/HtHD46jHLVhT5mDAA",        active: true  }
 ];
+```
+
+Icons use Lucide icon names (kebab-case). Contact section icons: Phone → "phone", Email → "mail", Location → "map-pin".
 ```
 
 Button styles:
@@ -211,6 +187,8 @@ Elements animate in sequentially, top to bottom:
 
 ## What NOT to Do (Brand Rules)
 
+- Never use emojis anywhere — buttons, labels, headings, contact section, footer, data files. The brand tone is Assured & Understated, Cultivated & Refined. Emojis are explicitly off-brand.
+- Use Lucide Icons (https://lucide.dev) via CDN for all icons. Line/stroke style only, never filled. Size 18px, stroke color inherits from parent (white on active buttons, #999 on coming-soon). Import in index.html: `<script src="https://unpkg.com/lucide@latest"></script>` and call `lucide.createIcons()` after DOM load.
 - Never use gradients on the logo
 - Never use unapproved colors (no random blues, purples, etc.)
 - Never use fonts other than Cinzel and DM Sans

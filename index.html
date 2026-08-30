@@ -1,88 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treasures Christian School - Links</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, #005E61 0%, #11B87A 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #005E61 0%, #11B87A 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        h1 {
-            color: #005E61;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .tagline { color: #666; font-size: 16px; margin-bottom: 30px; }
-        .link-btn {
-            display: block;
-            padding: 16px;
-            background: linear-gradient(135deg, #005E61 0%, #2F8C8F 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            margin: 12px 0;
-            transition: transform 0.2s;
-        }
-        .link-btn:hover { transform: translateY(-2px); }
-        .contact-section {
-            background: #F3FFD1;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        .contact-item { font-size: 14px; color: #666; margin: 10px 0; }
-        .contact-item a { color: #005E61; font-weight: 600; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasures Christian School — Links</title>
+  <meta name="description" content="Official link hub for Treasures Christian School, Ho, Volta Region, Ghana.">
+
+  <link rel="icon" href="public/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="public/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="public/apple-touch-icon.png">
+  <link rel="manifest" href="public/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">TCS</div>
-        <h1>Treasures Christian School</h1>
-        <p class="tagline">Every child is a treasure</p>
-        <p style="background: #FFF3CD; padding: 15px; border-radius: 8px; margin: 20px 0;">Coming Soon - Links being added</p>
-        <a href="#" class="link-btn">Inquiry Form</a>
-        <a href="#" class="link-btn">Career & Job Openings</a>
-        <a href="#" class="link-btn">Admissions Portal</a>
-        <a href="#" class="link-btn">School Gallery</a>
-        <a href="https://maps.google.com/?q=Treasures+Christian+School+Ho+Ghana" class="link-btn" target="_blank">Visit Us (Google Maps)</a>
-        <div class="contact-section">
-            <h3>Get in Touch</h3>
-            <div class="contact-item">Phone: <a href="tel:+233">+233 24 XXX XXXX</a></div>
-            <div class="contact-item">Email: <a href="mailto:info@tcsch.edu.gh">info@tcsch.edu.gh</a></div>
-            <div class="contact-item">Location: Ho, Volta Region, Ghana</div>
-        </div>
-        <p style="font-size: 12px; color: #999; margin-top: 20px;">© 2026 Treasures Christian School</p>
-    </div>
+  <main class="card">
+    <header class="card-header">
+      <img
+        class="logo"
+        src="public/logomark%20-%20deap%20teal%20bg.png"
+        alt="Treasures Christian School logomark"
+        width="80"
+        height="80">
+      <h1 class="school-name">Treasures Christian School</h1>
+      <p class="tagline">Every child is a treasure</p>
+    </header>
+
+    <nav class="links" id="links" aria-label="Treasures Christian School links">
+      <!-- Buttons are generated from data/links.js by script.js -->
+    </nav>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 class="contact-title" id="contact-title">Get in Touch</h2>
+      <ul class="contact-list">
+        <li class="contact-item">
+          <i class="contact-icon" data-lucide="phone" aria-hidden="true"></i>
+          <span class="contact-label">Phone</span>
+          <a href="tel:+233592651660">+233 59 265 1660</a>
+        </li>
+        <li class="contact-item">
+          <i class="contact-icon" data-lucide="mail" aria-hidden="true"></i>
+          <span class="contact-label">Email</span>
+          <a href="mailto:info@tcsch.edu.gh">info@tcsch.edu.gh</a>
+        </li>
+        <li class="contact-item">
+          <i class="contact-icon" data-lucide="map-pin" aria-hidden="true"></i>
+          <span class="contact-label">Location</span>
+          <span>Ho, Volta Region, Ghana</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Treasures Christian School. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script src="data/links.js"></script>
+  <script src="https://unpkg.com/lucide@1.37.0/dist/umd/lucide.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
