@@ -55,4 +55,30 @@
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
   }
+
+  var revealItems = [
+    { element: document.querySelector(".logo"), delay: 0 },
+    { element: document.querySelector(".school-name"), delay: 100 },
+    { element: document.querySelector(".tagline"), delay: 200 }
+  ];
+
+  var renderedButtons = document.querySelectorAll(".link-btn");
+  renderedButtons.forEach(function (button, index) {
+    revealItems.push({ element: button, delay: 300 + (index * 80) });
+  });
+
+  revealItems.push(
+    { element: document.querySelector(".contact"), delay: 700 },
+    { element: document.querySelector(".footer"), delay: 850 }
+  );
+
+  revealItems.forEach(function (item) {
+    if (!item.element) return;
+
+    item.element.classList.add("reveal");
+
+    window.setTimeout(function () {
+      item.element.classList.add("is-visible");
+    }, item.delay);
+  });
 })();
