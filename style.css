@@ -280,6 +280,21 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background: #f2f2f2;
+  position: relative;
+}
+
+.carousel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.2s linear infinite;
+}
+
+.carousel-card.is-loaded::before {
+  display: none;
 }
 
 .carousel-card img {
@@ -288,6 +303,12 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.carousel-card.is-loaded img {
+  opacity: 1;
 }
 
 @keyframes carousel-scroll {
@@ -296,6 +317,15 @@ body {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
 

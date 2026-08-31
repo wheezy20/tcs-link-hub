@@ -28,6 +28,7 @@
       el.href = link.url;
       el.target = "_blank";
       el.rel = "noopener noreferrer";
+      el.setAttribute("aria-label", link.label);
       el.appendChild(icon);
       el.appendChild(label);
     } else {
@@ -35,6 +36,7 @@
       el.className = "link-btn coming-soon";
       el.setAttribute("role", "link");
       el.setAttribute("aria-disabled", "true");
+      el.setAttribute("aria-label", link.label);
       el.appendChild(icon);
       el.appendChild(label);
 
@@ -81,6 +83,25 @@
     window.setTimeout(function () {
       item.element.classList.add("is-visible");
     }, item.delay);
+  });
+
+  var carouselCards = document.querySelectorAll(".carousel-card");
+  carouselCards.forEach(function (card) {
+    var image = card.querySelector("img");
+    if (!image) return;
+
+    card.classList.add("is-loading");
+
+    if (image.complete) {
+      card.classList.remove("is-loading");
+      card.classList.add("is-loaded");
+      return;
+    }
+
+    image.addEventListener("load", function () {
+      card.classList.remove("is-loading");
+      card.classList.add("is-loaded");
+    }, { once: true });
   });
 
   var carouselWrapper = document.querySelector(".carousel-track-wrapper");
